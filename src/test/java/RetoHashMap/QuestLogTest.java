@@ -31,7 +31,7 @@ public class QuestLogTest {
 
     @Test
     @Order(3)
-    @DisplayName("HashMap: Recuperar misión inexistente retorna null")
+    @DisplayName("getQuest() una misión inexistente retorna null")
     void testGetNonExistingQuest() {
         QuestLog log = new QuestLog();
         assertNull(log.getQuest("UNKNOWN"),
@@ -40,7 +40,7 @@ public class QuestLogTest {
 
     @Test
     @Order(4)
-    @DisplayName("HashMap: Completar misión existente actualiza su estado")
+    @DisplayName("completeQuest() misión existente actualiza su estado")
     void testCompleteExistingQuest() {
         QuestLog log = new QuestLog();
         Quest q = new Quest("SQ3", "Recoger 10 hierbas");
@@ -52,10 +52,10 @@ public class QuestLogTest {
 
     @Test
     @Order(5)
-    @DisplayName("HashMap: Completar misión inexistente no lanza excepción")
+    @DisplayName("completeQuest() una misión inexistente no lanza excepción")
     void testCompleteNonExistingQuest() {
         QuestLog log = new QuestLog();
         assertDoesNotThrow(() -> log.completeQuest("INVALID_ID"),
-                "❌ completeQuest() no debe lanzar excepciones para IDs inválidos");
+                "❌ completeQuest() solo debemos intentar cambiar el estado si la ID es correcta");
     }
 }
