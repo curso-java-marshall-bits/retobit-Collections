@@ -171,10 +171,10 @@ Para verificar si algo existe podemos usar el get(aquiVaElId). Esto nos devuelve
 
 ## Testing
 
-Para comprobar si has realizado bien el ejercicio ejecuta los tests. Cada clase tiene los suyos. Puedes ejecutarlos todos a la vez con el botón derecho en el directorio **src/test/java** seleccionando la opción 'Run tests in Java' o bien individualmente en: 
-- **src/test/java/MageTest**
-- **src/test/java/WarriorTest**
-- **src/test/java/CharacterTest** (éste no debería dar problemas si no modificamos la clase de Character)
+Para comprobar si has realizado bien el ejercicio ejecuta los tests. Cada package tiene los suyos. Puedes ejecutarlos todos a la vez con el botón derecho en el directorio **src/test/java** seleccionando la opción 'Run tests in Java' o bien individualmente seleccionando cada paquete: 
+- **src/test/java/RetoArrayList**
+- **src/test/java/RetoHashMap**
+- **src/test/java/RetoHashSet** 
 
 El test te indicará si has pasado con un tick verde ✅. En caso contrario verás el error.
 
