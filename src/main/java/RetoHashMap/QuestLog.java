@@ -1,4 +1,5 @@
 package RetoHashMap;
+
 import java.util.HashMap;
 
 public class QuestLog {
@@ -8,19 +9,24 @@ public class QuestLog {
         this.quests = new HashMap<>();
     }
 
-    // Añade una misión al registro
     public void addQuest(Quest quest) {
-
+        quests.putIfAbsent(quest.getId(), quest);
     }
 
-    // Busca una misión por ID (retorna null si no existe)
+
     public Quest getQuest(String questId) {
-
-        return null;
+        return quests.get(questId);
     }
 
-    // Marca una misión como completada (si existe)
     public void completeQuest(String questId) {
-
+        Quest quest = quests.get(questId);
+        if (quest != null) {
+            quest.setCompleted(true);
+        }
     }
+
+    public HashMap<String, Quest> getQuests() {
+        return quests;
+    }
+
 }

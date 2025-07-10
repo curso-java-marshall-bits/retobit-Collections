@@ -65,6 +65,8 @@ Los packages son como directorios que nos ayudan a:
 
 ## Tarea 1: ArrayList, sistema de inventario
 
+#### Archivo en el que trabajaremos: *Inventory.java*
+
 Nuestra Tech Lead nos indica que debemos implementar un sistema de inventario usando ArrayList para que los jugadores puedan gestionar objetos (items) en su inventario, con las siguientes operaciones:
 
 - Añadir objetos al inventario.
@@ -97,32 +99,20 @@ Usa un bucle for o forEach:
 
 ````java
 for (Item item : items) {
-    if (item.getName().equals(itemName)) {
-        // Hacer algo...
-    }
+    // cosillas a hacer 😉
 }
 ````
 Eliminar un elemento:
-Usa el método remove() del ArrayList:
-
-````java
-items.remove(item);  // Elimina por objeto
-````
+Usa el método remove().
 
 Sumar pesos:
-Acumula el peso en una variable:
-
-````java
-double total = 0;
-for (Item item : items) {
-    total += item.getWeight();
-}
-return total;
-````
+Acumula el peso total en una variable y luego haz un loop para sumar todos los pesos. 
 
 </details>
 
 ## Tarea 2: HashSet, sistema de habilidades
+
+### Archivo en el que trabajaremos: *Character.java*
 
 La segunda tarea que nuestra Tech Lead nos ha asignado es implementar un sistema de habilidades usando HashSet para garantizar que cada personaje aprenda habilidades sin duplicados, con las siguientes funcionalidades:
 
@@ -143,17 +133,14 @@ Los métodos a implementar son:
 
 <details> <summary>Pistas 🕵️‍♀️</summary>
 
-Añadir algo con HashSet:
-````java
-skills.add(skill);  // Retorna true si era nuevo elemento
-````
-Verificar existencia:
-````java
-skills.contains(skill);  // Retorna true si existe
-````
+Añadir algo con HashSet se puede hacer con el método add()
+
+Para verificar si algo existe puedes usar el método contains()
 </details>
 
 ## Tarea 3: HashMap: Quests
+
+### Archivo en el que trabajaremos: *QuestLog.java*
 
 Por último, la siguiente tarea es implementar un sistema de misiones usando HashMap para gestionar eficientemente las misiones del jugador a través de un ID único, con estas operaciones:
 
@@ -174,6 +161,13 @@ Los métodos a implementar son:
 
     - completeQuest(String questId):
     Marca la misión como completada si existe.
+
+<details> <summary>Pistas 🕵️‍♀️</summary>
+
+Añadir algo con HashMap se puede hacer con el método put(), pero existe también el putIfAbsent() que lo añade solamente si no existe.
+
+Para verificar si algo existe podemos usar el get(aquiVaElId). Esto nos devuelve el objeto.
+</details>
 
 ## Testing
 

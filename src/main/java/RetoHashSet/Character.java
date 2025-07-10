@@ -5,10 +5,10 @@ public abstract class Character {
     private HashSet<Skill> skills = new HashSet<>();
 
     public boolean learnSkill(Skill skill) {
-        return false;
+        return skills.add(skill);
     }
 
     public boolean hasSkill(Skill skill) {
-        return false;
+        return skills.contains(skill);
     }
 }

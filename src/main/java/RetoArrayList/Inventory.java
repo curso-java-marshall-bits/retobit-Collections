@@ -5,19 +5,35 @@ public class Inventory {
     private final ArrayList<Item> items = new ArrayList<>();
 
     public void addItem(Item item) {
-
+        items.add(item);
     }
 
     public boolean removeItem(String itemName) {
+        for(Item item: items){
+            if (item.getName().equals(itemName)) {
+              return  items.remove(item);
+            }
+        }
         return false;
     }
 
     public Item findItem(String itemName) {
-        return new Item("", 0);
+        for(Item item: items){
+            if (item.getName().equals(itemName)) {
+                return item;
+            }
+        }
+
+        return null;
     }
 
     public double getTotalWeight() {
-        return 0.0;
+        double totalWeight = 0;
+        for(Item item: items){
+            totalWeight += item.getWeight();
+        }
+
+        return totalWeight;
     }
 
     public ArrayList<Item> getItems() {

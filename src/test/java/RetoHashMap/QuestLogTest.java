@@ -7,7 +7,20 @@ public class QuestLogTest {
 
     @Test
     @Order(1)
-    @DisplayName("HashMap: Añadir misión permite recuperarla por ID")
+    @DisplayName("addQuest() añade correctamente una misión")
+    void testQuestAddition() {
+        QuestLog log = new QuestLog();
+        Quest testQuest = new Quest("TEST_001", "Misión de prueba");
+
+        log.addQuest(testQuest);
+
+        assertFalse(log.getQuests().isEmpty(), "❌ El registro de misiones no debería estar vacío después de añadir una");
+        assertEquals(1, log.getQuests().size(), "❌ Debería haber exactamente 1 misión en el registro");
+    }
+
+    @Test
+    @Order(2)
+    @DisplayName("getQuest() permite recuperar una misión por ID")
     void testAddAndGetQuest() {
         QuestLog log = new QuestLog();
         Quest q = new Quest("MQ1", "Derrotar al Rey Demonio");
@@ -17,7 +30,7 @@ public class QuestLogTest {
     }
 
     @Test
-    @Order(2)
+    @Order(3)
     @DisplayName("HashMap: Recuperar misión inexistente retorna null")
     void testGetNonExistingQuest() {
         QuestLog log = new QuestLog();
@@ -26,7 +39,7 @@ public class QuestLogTest {
     }
 
     @Test
-    @Order(3)
+    @Order(4)
     @DisplayName("HashMap: Completar misión existente actualiza su estado")
     void testCompleteExistingQuest() {
         QuestLog log = new QuestLog();
@@ -38,7 +51,7 @@ public class QuestLogTest {
     }
 
     @Test
-    @Order(4)
+    @Order(5)
     @DisplayName("HashMap: Completar misión inexistente no lanza excepción")
     void testCompleteNonExistingQuest() {
         QuestLog log = new QuestLog();
