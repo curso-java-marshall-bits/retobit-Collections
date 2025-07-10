@@ -1,7 +1,7 @@
 package RetoHashSet;
-
 import java.util.Objects;
 
+// Esta clase ya tiene lo necesario. No hace falta modificarla
 public class Skill {
     private String name;
 

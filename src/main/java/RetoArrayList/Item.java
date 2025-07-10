@@ -1,5 +1,6 @@
 package RetoArrayList;
 
+// Esta clase no la vamos a modificar, ya tiene lo necesario
 public class Item {
 
     private String name;
