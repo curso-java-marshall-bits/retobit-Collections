@@ -11,16 +11,27 @@ public class QuestLog {
     }
 
     public void addQuest(Quest quest) {
-        // Aquí tu código
+        if (quests.containsKey(quest.getId())){
+            return;
+        } else {
+            quests.put(quest.getId(), quest);
+        }
     }
 
     public Quest getQuest(String questId) {
-        // Aquí tu código
-        return null; // Sustituye null por el valor que sea
+        if (quests.containsKey(questId)){
+            return quests.get(questId);
+        } else {
+            return null;
+        }
     }
 
     public void completeQuest(String questId) {
-        // Aquí tu código
+        if (quests.containsKey(questId)){
+            quests.get(questId).setCompleted(true);
+        } else {
+            return;
+        }
     }
 
     // Este getter no lo vamos a modificar
