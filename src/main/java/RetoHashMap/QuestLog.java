@@ -11,16 +11,22 @@ public class QuestLog {
     }
 
     public void addQuest(Quest quest) {
-        // Aquí tu código
+        Quest questFind = getQuest(quest.getId());
+        if (questFind == null) {
+            this.quests.put(quest.getId(), quest);
+        }
     }
 
     public Quest getQuest(String questId) {
-        // Aquí tu código
-        return null; // Sustituye null por el valor que sea
+        return this.quests.get(questId);
     }
 
     public void completeQuest(String questId) {
-        // Aquí tu código
+        Quest questFind = getQuest(questId);
+        if (questFind != null) {
+            questFind.setCompleted(true);
+            this.quests.put(questId, questFind);
+        }
     }
 
     // Este getter no lo vamos a modificar
