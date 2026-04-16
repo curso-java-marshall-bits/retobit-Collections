@@ -13,18 +13,22 @@ public class Quest {
     }
 
     public String getId() {
+
         return id;
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public boolean isCompleted() {
+
         return completed;
     }
 
     public void setCompleted(boolean completed) {
+
         this.completed = completed;
     }
 }

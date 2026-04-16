@@ -45,14 +45,17 @@ public class Skill {
      */
     @Override
     public int hashCode() {
+
         return Objects.hash(name);
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 }
