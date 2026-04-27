@@ -6,12 +6,20 @@ public abstract class Character {
     private HashSet<Skill> skills = new HashSet<>();
 
     public boolean learnSkill(Skill skill) {
-        // Aquí tu código
-        return false; // sustituye este boolean por el return real
+        if (skills.add(skill)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
+
     public boolean hasSkill(Skill skill) {
-        // Aquí tu código
-        return false;  // sustituye este boolean por el return real
+        boolean hasSkill = skills.contains(skill);
+        if (hasSkill ){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
