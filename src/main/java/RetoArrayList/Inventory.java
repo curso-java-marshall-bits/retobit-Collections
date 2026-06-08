@@ -5,22 +5,39 @@ public class Inventory {
     private final ArrayList<Item> items = new ArrayList<>();
 
     public void addItem(Item item) {
-        // Aquí tu código
+        items.add(item);
     }
 
     public boolean removeItem(String itemName) {
         // Aquí tu código
-        return false;
+       for(Item i : items){
+           if(itemName.equalsIgnoreCase(i.getName())){
+               items.remove(i);
+               return true;
+           }
+           else{
+               return false;
+           }
+       }
+       return false;
     }
 
     public Item findItem(String itemName) {
-        // Aquí tu código
+        for(Item i : items){
+            if(i.getName().equalsIgnoreCase(itemName)){
+                return i;
+            }
+        }
         return null;
     }
 
     public double getTotalWeight() {
         // Aquí tu código
-        return 0.0; // sustituye esto por el valor real
+        double sum = 0;
+        for(Item i : items){
+            sum += i.getWeight();
+        }
+        return sum; // sustituye esto por el valor real
     }
 
     // Este getter no es necesario modificarlo
