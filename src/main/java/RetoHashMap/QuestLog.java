@@ -7,20 +7,35 @@ public class QuestLog {
 
     // El constructor no hace falta modificarlo
     public QuestLog() {
+
         this.quests = new HashMap<>();
     }
 
     public void addQuest(Quest quest) {
         // Aquí tu código
+        quests.put(quest.getId(), quest);
     }
 
     public Quest getQuest(String questId) {
         // Aquí tu código
-        return null; // Sustituye null por el valor que sea
-    }
+        return quests.get(questId); // Si existe el objeto lo duvuelve si no, devuelve un null
 
+/*        if (quests.containsKey(questId)){
+            return quests.get(questId);
+        } else {
+        return null;
+        }*/
+        // return quests.getOrDefault(questId, null);
+    }
     public void completeQuest(String questId) {
         // Aquí tu código
+        Quest quest = quests.get(questId);
+        if(quest !=null) {
+            quest.setCompleted(true);
+        }
+        /*if(quests.containsKey(questId)){
+            quests.get(questId).setCompleted(true);
+        }*/
     }
 
     // Este getter no lo vamos a modificar

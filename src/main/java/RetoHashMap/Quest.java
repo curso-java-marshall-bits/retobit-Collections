@@ -25,6 +25,7 @@ public class Quest {
     }
 
     public void setCompleted(boolean completed) {
+
         this.completed = completed;
     }
 }
