@@ -6,21 +6,27 @@ public class Inventory {
 
     public void addItem(Item item) {
         // Aquí tu código
+        this.items.add(item);
     }
 
     public boolean removeItem(String itemName) {
-        // Aquí tu código
-        return false;
+        // Busca en la lista, borra si coincide el nombre y devuelve true o false automáticamente
+        return this.items.removeIf(item -> item.getName().equalsIgnoreCase(itemName));
     }
 
     public Item findItem(String itemName) {
         // Aquí tu código
-        return null;
+        return this.items.stream()
+                .filter(item -> item.getName().equalsIgnoreCase(itemName))
+                .findFirst()
+                .orElse(null);
     }
 
     public double getTotalWeight() {
         // Aquí tu código
-        return 0.0; // sustituye esto por el valor real
+        return this.items.stream()
+                .mapToDouble(items -> items.getWeight())
+                .sum(); // sustituye esto por el valor real
     }
 
     // Este getter no es necesario modificarlo
